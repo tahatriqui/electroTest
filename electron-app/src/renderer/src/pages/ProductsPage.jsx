@@ -12,7 +12,6 @@ const ProductsPage = () => {
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
 			<Header title='Products' />
-
 			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
 				{/* STATS */}
 				<motion.div
@@ -26,9 +25,7 @@ const ProductsPage = () => {
 					<StatCard name='Low Stock' icon={AlertTriangle} value={23} color='#F59E0B' />
 					<StatCard name='Total Revenue' icon={DollarSign} value={"$543,210"} color='#EF4444' />
 				</motion.div>
-
 				<ProductsTable />
-
 				{/* CHARTS */}
 				<div className='grid grid-col-1 lg:grid-cols-2 gap-8'>
 					<SalesTrendChart />

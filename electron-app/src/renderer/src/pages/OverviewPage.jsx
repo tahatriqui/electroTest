@@ -11,7 +11,6 @@ const OverviewPage = () => {
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
 			<Header title='Overview' />
-
 			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
 				{/* STATS */}
 				<motion.div
@@ -25,9 +24,7 @@ const OverviewPage = () => {
 					<StatCard name='Total Products' icon={ShoppingBag} value='567' color='#EC4899' />
 					<StatCard name='Conversion Rate' icon={BarChart2} value='12.5%' color='#10B981' />
 				</motion.div>
-
 				{/* CHARTS */}
-
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
 					<SalesOverviewChart />
 					<CategoryDistributionChart />

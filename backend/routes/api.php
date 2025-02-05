@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,18 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-// Static route example
-Route::get('/hello', function () {
-    return response()->json([[
-        'message' => 'Hello, this is a static API response!'
-    ] ,
-[
-        'message' => 'Hello, this is a static API response!'
-    ] ,
-[
-        'message' => 'Hello, this is a static API response!'
-    ] ,
-[
-        'message' => 'Hello, this is a static API response!'
-    ] ]);
-});
+Route::get("/produit",[ProduitController::class,"index"]);
+Route::post('/register', [AuthController::class, 'registerr']);
+Route::post('/login', [AuthController::class, 'login']);
