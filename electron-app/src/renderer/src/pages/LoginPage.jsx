@@ -9,15 +9,12 @@ const LoginPage = ({ onLoginSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-
     try {
       const response = await axios.post("http://127.0.0.1:8000/api/login", {
         email,
         password,
       });
-
       const data = response.data;
-
       onLoginSuccess(data.token); // Gérer le token de connexion
       localStorage.setItem("authToken", data.token);
     } catch (err) {
@@ -30,7 +27,6 @@ const LoginPage = ({ onLoginSuccess }) => {
       }
     }
   };
-
   return (
    <div className='flex-1 overflow-auto relative z-10 bg-white'>
    		<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
@@ -47,7 +43,6 @@ const LoginPage = ({ onLoginSuccess }) => {
             <h1 className="text-2xl xl:text-3xl font-extrabold text-black">Login</h1>
             <div className="w-full flex-1 mt-8">
               <div className="my-12 border-b text-center">
-
               </div>
  <form onSubmit={handleSubmit}>
 
@@ -58,7 +53,6 @@ const LoginPage = ({ onLoginSuccess }) => {
                   placeholder="Email"
                    value={email}
             onChange={(e) => setEmail(e.target.value)}
-
                 />
                 <input
                   className="w-full px-8 py-4 rounded-lg font-medium text-black bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
@@ -66,10 +60,7 @@ const LoginPage = ({ onLoginSuccess }) => {
                   placeholder="Password"
                   value={password}
             onChange={(e) => setPassword(e.target.value)}
-
                 />
-                  {error && <p style={styles.error}>{error}</p>}
-
                 <button type="submit" className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                  Se Connecter
                 </button>
@@ -88,7 +79,6 @@ const LoginPage = ({ onLoginSuccess }) => {
             </div>
           </div>
         </div>
-
       </div>
       </main>
     </div>
